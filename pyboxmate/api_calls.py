@@ -20,7 +20,12 @@ class BoxmateAPI:
         r = self.api_call(api_endpoint)
         return r
 
-    def lookup_member(self, user_id: int) -> dict:
+    def lookup_member_details(self, user_id: int):
+        api_endpoint = f'/members/details/{user_id}'
+        r = self.api_call(api_endpoint)
+        return r
+
+    def lookup_member_activity(self, user_id: int):
         """ Pulls recent activity of member """
         api_endpoint = f'/members/activity/{user_id}'
         r = self.api_call(api_endpoint)
